@@ -17,22 +17,22 @@ const onSignIn = function (formData) {
     data: formData
   })
 }
-const onSignOut = function (formData) {
+
+const onChangePassword = function (formData) {
   return $.ajax({
-    url: config.apiUrl + '/sign-out/',
-    method: 'DELETE',
+    url: config.apiUrl + '/change-password',
+    method: 'PATCH',
+    data: formData,
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
   })
 }
 
-const onChangePassword = function (formData) {
-  console.log(store.user)
+const onSignOut = function () {
   return $.ajax({
-    url: config.apiUrl + '/change-password',
-    method: 'PATCH',
-    data: formData,
+    url: config.apiUrl + '/sign-out/',
+    method: 'DELETE',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }

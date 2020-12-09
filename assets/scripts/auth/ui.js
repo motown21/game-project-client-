@@ -1,36 +1,51 @@
 const store = require('./../store')
-// token unidentifed found someone else with same error.
+
 const signUpSuccess = function (response) {
-  // creating a message that tells the user they have sucessfully signed up
+  // creating a message that displays to the user they have sucessfully signed up
   $('#message').text('Signed Up Successfully!:)')
-  $('.unathenticated').show()
-  $('.unathenticated').hide()
+  // hide messaage when user is signed up
+  $('.authenticated').hide()
+  // reset form
+  $('form').trigger('rest')
 }
 
 const signUpFailure = function (error) {
   $('#message').text('Sign Up Failed :( with error: ' + error.message)
 }
 
+// creating a message that displays that the user has signed in successfully
 const signInSuccess = function (response) {
   $('#message').text('Signed In Successfully! :)')
   store.user = response.user
+  // Show messaage when user is signed in
+  $('.authenticated').show()
+  // Hide messge when user is signed in
   $('.unauthenticated').hide()
 }
 
 const signInFailure = function (error) {
   $('#message').text('Sign In Failed :( with error: ' + error.message)
 }
-const signOutSuccess = function (response) {
-  $('message').text('Sign out Successful!:)')
+
+const changePasswordSuccess = function (response) {
+  $('message').text('Change password Successfully:)')
 }
+const changePasswordFailure = function (error) {
+  $('message').text('Change password failed :( with error:' + error.message)
+}
+// creating a message that displays that the user has signed out successfully
+const signOutSuccess = function () {
+  $('message').text('Sign out Successful!:)')
+  $('.authenticated').hide()
+  $('.unauthenticated').show()
+  store.user = null
+  // reset form
+  $('form').trigger('rest')
+}
+
 const signOutFailure = function (error) {
   $('message').text('Sign out Failed:' + error.responseJSON.message)
 }
-// store user
-store.user = null
-
-// Reset form:
-$('form').trigger('reset')
 
 module.exports = {
   signUpSuccess: signUpSuccess,
@@ -38,5 +53,7 @@ module.exports = {
   signInSuccess: signInSuccess,
   signInFailure: signInFailure,
   signOutSuccess: signOutSuccess,
-  signOutFailure: signOutFailure
+  signOutFailure: signOutFailure,
+  changePasswordSuccess: changePasswordSuccess,
+  changePasswordFailure: changePasswordFailure
 }
