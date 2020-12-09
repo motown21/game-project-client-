@@ -1,4 +1,4 @@
-curl "https://github.com/motown21/game-project-client.com/sign-in" \
+curl "https://tic-tac-toe-api-development.herokuapp.com" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \

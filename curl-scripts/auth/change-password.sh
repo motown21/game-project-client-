@@ -1,4 +1,4 @@
-curl "https://github.com/motown21/game-project-client.com/change-password" \
+curl "https://tic-tac-toe-api-development.herokuapp.com" \
   --include \
   --request PATCH \
   --header "Authorizatin: Bearer ${TOKEN}"
