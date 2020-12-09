@@ -7,6 +7,7 @@ const authEvents = require('./auth/events')
 // require('./example')
 
 $(() => {
+  $('.authenticated').hide()
   // create event listener for sign up
   $('#sign-up').on('submit', authEvents.onSignUp)
 
@@ -16,4 +17,6 @@ $(() => {
   $('#change-password').on('submit', authEvents.onChangePassword)
   // create event listener sign out
   $('#sign-out').on('click', authEvents.onSignOut)
+  // create event listener for new game
+  $('#new-game').on('click', authEvents.onNewGame)
 })

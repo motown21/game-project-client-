@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic Tac Toe </title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -13,33 +13,59 @@
     </head>
     <body>
       <h1>Tic Tac Toe</h1>
-
+        <div class ="unauthenticated">
         <form id="Sign-up">
         <input name="credentials[email]" type="text" placeholder="tic_tac_toe@email.com">
         <input name="credentials[password]" type="password" placeholder="xoxooo">
         <input name="credentials[password_confirmation]" type="password" placeholder="xoxooo">
         <button type="submit"> Sign Up </button>
         </form>
+        </div>
 
+        <div class ="unauthenticated">
         <form id="Sign-in">
         <input name="credentials[email]" type="text" placeholder="tic_tac_toe@email.com">
         <input name="credentials[password]" type="password" placeholder="xoxooo">
-        <button type="submit"> Sign in </button>
+        <button type="submit"> Sign In </button>
         </form>
+        </div>
 
+        <div class="authenticated">
         <form id="Sign-out">
-        <button type="submit"> Sign out</button>
+        <button type="submit"> Sign Out</button>
         </form>
+        </div>
 
+        <div class ="authenticated">
         <form id="change-password">
         <input name="passwords[old]" type="password" placeholder="old password">
         <input name="passwords[new]" type="password" placeholder="new password">
         <button type="submit">Change Password</button>
         </form>
+        </div>
 
+        <div class="unauthenticated">
         <form id="New-game">
         <button type="submit"> New Game</button>
         </form>
+        </div>
+
+        <div class="container">
+        <h2> Tic Tac Toe</h2>
+        <div class="row">
+          <div class="col-4 col-lg-3 box"></div>
+          <div class="col-4 col-lg-3 box"></div>
+          <div class="col-4 col-lg-3 box"></div>
+
+          <div class="col-4 col-lg-3 box"></div>
+          <div class="col-4 col-lg-3 box"></div>
+          <div class="col-4 col-lg-3 box"></div>
+
+          <div class="col-4 col-lg-3 box"></div>
+          <div class="col-4 col-lg-3 box"></div>
+          <div class="col-4 col-lg-3 box"></div>
+        </div>
+      </div>
 
     </body>
 </html>

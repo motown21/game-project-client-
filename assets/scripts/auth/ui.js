@@ -5,6 +5,7 @@ const signUpSuccess = function (response) {
   $('#message').text('Signed Up Successfully!:)')
   // hide messaage when user is signed up
   $('.authenticated').hide()
+  $('unauthenticated').show()
   // reset form
   $('form').trigger('rest')
 }
