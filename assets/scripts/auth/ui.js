@@ -28,6 +28,7 @@ const signInFailure = function (error) {
   $('#message').text('Sign In Failed :( with error: ' + error.message)
 }
 
+// creating a message that displays that the user has changed password successfully
 const changePasswordSuccess = function (response) {
   $('message').text('Change password Successfully:)')
 }

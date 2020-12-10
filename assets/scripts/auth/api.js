@@ -39,17 +39,9 @@ const onSignOut = function () {
   })
 }
 
-const onNewGame = function () {
-  return $.ajax({
-    url: config.apiURL + 'new-game',
-    method: 'POST'
-  })
-}
-
 module.exports = {
   onSignUp: onSignUp,
   onSignIn: onSignIn,
   onSignOut: onSignOut,
-  onChangePassword: onChangePassword,
-  onNewGame: onNewGame
+  onChangePassword: onChangePassword
 }
