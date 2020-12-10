@@ -21,4 +21,5 @@ $(() => {
 
   // create event listener for new game
   $('#new-game').on('click', gamesEvents.onNewGame)
+  // $('
 })

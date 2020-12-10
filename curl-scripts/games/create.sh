@@ -1,7 +1,6 @@
-curl "https://tic-tac-toe-api-development.herokuapp.com" \
-  --include \
-  --request POST \
-  --header "Content-Type: application/json" \
-  --header "Authorization: Token token=${TOKEN}"
+curl --include --request POST "https://tic-tac-toe-api-development.herokuapp.com/games"\
+  --header "Authorization: Bearer ${TOKEN}" \
+  --header "Content-type: application/json" \
+  --data '{}'
 
-  echo
+echo

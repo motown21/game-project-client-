@@ -10,6 +10,19 @@
 // Authorization: 'Bearer ' + store.user.token
 //  })
 // }
+
+// const onSelection = function () {
+// return $.ajax({
+//  url:config.apiUrl + '/games',
+// method: 'PATCH',
+// data: {
+// game:
+// cell:
+// index:
+// value:
+// }
+//   })
+// }
 // module.exports = {
 //  onNewGame: onNewGame
 // }

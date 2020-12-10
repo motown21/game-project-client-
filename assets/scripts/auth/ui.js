@@ -4,8 +4,8 @@ const signUpSuccess = function (response) {
   // creating a message that displays to the user they have sucessfully signed up
   $('#message').text('Signed Up Successfully!:)')
   // hide messaage when user is signed up
-  $('.authenticated').hide()
-  $('unauthenticated').show()
+  // $('.authenticated').hide()
+  // $('unauthenticated').show()
   // reset form
   $('form').trigger('rest')
 }
@@ -31,6 +31,7 @@ const signInFailure = function (error) {
 // creating a message that displays that the user has changed password successfully
 const changePasswordSuccess = function (response) {
   $('message').text('Change password Successfully:)')
+  $('.authenticated').show()
 }
 const changePasswordFailure = function (error) {
   $('message').text('Change password failed :( with error:' + error.message)
@@ -40,6 +41,7 @@ const signOutSuccess = function () {
   $('message').text('Sign out Successful!:)')
   $('.authenticated').hide()
   $('.unauthenticated').show()
+  $('gameBoard').hide()
   store.user = null
   // reset form
   $('form').trigger('rest')
