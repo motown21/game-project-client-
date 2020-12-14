@@ -27,6 +27,7 @@ $(() => {
   $('#game-index').on('click', gamesEvents.onIndexGame)
   $('#game-board').on('click', gamesEvents.onGameBoard)
 })
+// create an object for tic tac toe game
 const ticTacToe = {
   player1: 'x',
   player2: 'o',
@@ -43,6 +44,7 @@ const ticTacToe = {
     [2, 4, 6]
   ]
 }
+// Determin whos turn it is to play
 const currentPlayer = function (player1, player2) {
   if (this.player1 === 'x') {
     return player1 + "it's x's turn"
@@ -50,12 +52,21 @@ const currentPlayer = function (player1, player2) {
     return player2 + "it's o's turn"
   }
 }
-const boardSelection = function (dataCellIndex) {
+// check the board cells
+const boardSelection = function (cells, dataCellIndex) {
+  // const index = event.target.id
+  // if (!cells[index]) {
+  // cells[index] = currentPlayer
+  // event.target.innerText = currentPlayer
+  // }
+  // calling all classes with name box
+  // const boxes = Array.from(document.getElementClassName('box')
+  $('.box').text('0')
   if (this.gameOver || ticTacToe.cells[dataCellIndex] !== '') {
     return 'this position is not open. Try again'
   }
 }
-
+// determine the winner of the game
 const getWinner = function (gameOver, currentPlayer, cells) {
   if (currentPlayer === this.cells[0] && currentPlayer === this.cells[1] && currentPlayer === this.cells[2]) {
     return gameOver + 'Congradulations you WON!'
@@ -73,6 +84,7 @@ const getWinner = function (gameOver, currentPlayer, cells) {
     return gameOver + 'Congradulations you WON!'
   } else if (currentPlayer === this.cells[2] && currentPlayer === this.cell[4] && currentPlayer === this.cells[6]) {
     return gameOver + 'Congradulations you WON!'
+  }
 }
 
 const drawGame = function () {
