@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tic Tac Toe </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-dark bg-primary">
+    <h1>Tic Tac Toe</h1>
+    <p id="message"></p>
+
+    <!-- <div class="unauthenticated"> -->
+    <form id="Sign-up">
+      <input name="credentials[email]" type="text" placeholder="tic_tac_toe@email.com">
+      <input name="credentials[password]" type="password" placeholder="Password">
+      <input name="credentials[password_confirmation]" type="password" placeholder="Password">
+      <button type="submit"> Sign Up </button>
+    </form>
+
+    <form id="Sign-in">
+      <input name="credentials[email]" type="text" placeholder="tic_tac_toe@email.com">
+      <input name="credentials[password]" type="password" placeholder="Password">
+      <button type="submit"> Sign In </button>
+    </form>
+    <!-- </div> -->
+
+    <!-- <div class="authenticated"> -->
+    <form id="Change-password">
+      <input name="passwords[old]" type="password" placeholder="old password">
+      <input name="passwords[new]" type="password" placeholder="new password">
+      <button type="submit">Change Password</button>
+
+    </form>
+    <form id="Sign-out">
+    <button type="submit"> Sign Out</button>
+  </form>
+<!--  </div> -->
+  </nav>
+
+  <!-- <div class="authenticated"> -->
+    <form id="create-game">
+    <button type="submit"> New Game</button>
+    </form>
+    <button id="Games-played" type="submit"> Games Played</button>
+
+  <p id="Game-message"></p>
+
+  <div id="Game-board">
+    <div class="container">
+      <h2> Tic Tac Toe</h2>
+      <div class="row">
+        <div class="col-4 col-lg-4 box" data-cell-index="0"></div>
+        <div class="col-4 col-lg-4 box" data-cell-index="1"></div>
+        <div class="col-4 col-lg-4 box" data-cell-index="2"></div>
+
+        <div class="col-4 col-lg-4 box" data-cell-index="3"></div>
+        <div class="col-4 col-lg-4 box" data-cell-index="4"></div>
+        <div class="col-4 col-lg-4 box" data-cell-index="5"></div>
+
+        <div class="col-4 col-lg-4 box" data-cell-index="6"></div>
+        <div class="col-4 col-lg-4 box" data-cell-index="7"></div>
+        <div class="col-4 col-lg-4 box" data-cell-index="8"></div>
+      </div>
+    </div>
+  </div>
+  <!--</div> -->
+
+
+    <!-- <button id="player1" type="submit"> X</button>
+    <button id="player2" type="submit"> O</button> -->>
+
+</body>
+</html>
