@@ -9,7 +9,6 @@ const gamesEvents = require('./games/events')
 
 $(() => {
   $('.authenticated').hide()
-  // $('.unauthenticated').show()
 
   // create event listener for sign up
   $('#sign-up').on('submit', authEvents.onSignUp)
@@ -32,7 +31,7 @@ const ticTacToe = {
   player1: 'x',
   player2: 'o',
   cells: ['', '', '', '', '', '', '', '', ''],
-  gameOver: false,
+  gameOver: true,
   gameWinner: [
     [0, 1, 2],
     [3, 2, 5],
@@ -44,11 +43,44 @@ const ticTacToe = {
     [2, 4, 6]
   ]
 }
-const boardSelection = function (index) {
-  if (ticTacToe.gameOver || ticTacToe.cells[index] !== '') {
+const currentPlayer = function (player1, player2) {
+  if (this.player1 === 'x') {
+    return player1 + "it's x's turn"
+  } else {
+    return player2 + "it's o's turn"
+  }
+}
+const boardSelection = function (dataCellIndex) {
+  if (this.gameOver || ticTacToe.cells[dataCellIndex] !== '') {
     return 'this position is not open. Try again'
   }
 }
+
+const getWinner = function (gameOver, currentPlayer, cells) {
+  if (currentPlayer === this.cells[0] && currentPlayer === this.cells[1] && currentPlayer === this.cells[2]) {
+    return gameOver + 'Congradulations you WON!'
+  } else if (currentPlayer === this.cells[3] && currentPlayer === this.cell[2] && currentPlayer === this.cells[5]) {
+    return gameOver + 'Congradulations you WON!'
+  } else if (currentPlayer === this.cells[6] && currentPlayer === this.cell[7] && currentPlayer === this.cells[8]) {
+    return gameOver + 'Congradulations you WON!'
+  } else if (currentPlayer === this.cells[0] && currentPlayer === this.cell[3] && currentPlayer === this.cells[6]) {
+    return gameOver + 'Congradulations you WON!'
+  } else if (currentPlayer === this.cells[1] && currentPlayer === this.cell[4] && currentPlayer === this.cells[7]) {
+    return gameOver + 'Congradulations you WON!'
+  } else if (currentPlayer === this.cells[2] && currentPlayer === this.cell[5] && currentPlayer === this.cells[8]) {
+    return gameOver + 'Congradulations you WON!'
+  } else if (currentPlayer === this.cells[0] && currentPlayer === this.cell[4] && currentPlayer === this.cells[8]) {
+    return gameOver + 'Congradulations you WON!'
+  } else if (currentPlayer === this.cells[2] && currentPlayer === this.cell[4] && currentPlayer === this.cells[6]) {
+    return gameOver + 'Congradulations you WON!'
+}
+
+const drawGame = function () {
+
+}
 module.exports = {
-  boardSelection: boardSelection
+  currentPlayer: currentPlayer,
+  boardSelection: boardSelection,
+  getWinner: getWinner,
+  drawGame: drawGame
 }

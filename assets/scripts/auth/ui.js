@@ -1,10 +1,9 @@
 const store = require('./../store')
-// const app = require('./../app')
 
 const signUpSuccess = function (response) {
   // creating a message that displays to the user they have sucessfully signed up
   $('#message').text('Signed Up Successfully!')
-  // $('form').trigger('rest')
+  $('form').trigger('rest')
 }
 
 const signUpFailure = function (error) {
@@ -16,16 +15,9 @@ const signInSuccess = function (response) {
   $('#message').text('Sign In Success! Welcome')
   store.user = response.user
   // Show messaage when user is signed in
-
-  // $('.authenticated').show()
-
-  // $('.unauthenticated').show()
+  $('.authenticated').show()
   // Hide messge when user is signed in
-  // $('.unauthenticated').hide() // hide
-  $('#game-board').hide()
-  $('#change-assword').hide()
-  // $('#new-game').show()
-  // $('#sign-out').hide()
+  $('.unauthenticated').hide()
 }
 
 const signInFailure = function (error) {
@@ -35,10 +27,10 @@ const signInFailure = function (error) {
 // creating a message that displays that the user has changed password successfully
 const changePasswordSuccess = function (response) {
   $('message').text('Change password Successfully')
-  // $('.authenticated').show()
-  // $('.authenticated').hide()
 
-  // $('.unauthenticated').show()
+  $('.authenticated').hide()
+
+  $('.unauthenticated').show()
 }
 const changePasswordFailure = function (error) {
   $('message').text('Change password failed with error' + error.message)
@@ -46,9 +38,9 @@ const changePasswordFailure = function (error) {
 // creating a message that displays that the user has signed out successfully
 const signOutSuccess = function () {
   $('message').text('Sign out Successful!')
-  // $('#authenticated').hide()
-  // $('#unauthenticated').show()
-  // $('#game-board').hide()
+  $('#authenticated').hide()
+  $('#unauthenticated').show()
+  $('#game-board').hide()
   store.user = null
   // reset form
   $('form').trigger('rest')
