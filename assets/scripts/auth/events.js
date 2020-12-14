@@ -9,6 +9,7 @@ const onSignUp = function (event) {
 
   // Get form data and use event.target as the form
   const form = event.target
+
   const formData = getFormFields(form)
 
   // create functions to run when sign up is sucessful or fails
@@ -32,15 +33,9 @@ const onSignIn = function (event) {
 }
 
 const onSignOut = function (event) {
-  // Prevent the sign out page form refreshing
   event.preventDefault()
 
-  // Get  form data and use event.target as the form
-  const form = event.target
-  const formData = getFormFields(form)
-
-  // create functions to run when sign out is sucessful or fails
-  api.signOut(formData)
+  api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
 }

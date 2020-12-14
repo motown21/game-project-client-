@@ -4,7 +4,7 @@ const store = require('./../store')
 
 const onSignUp = function (formData) {
   return $.ajax({
-    url: config.apiUrl + '/sign-up/',
+    url: config.apiUrl + '/sign-up',
     method: 'POST',
     data: formData
   })
@@ -12,7 +12,7 @@ const onSignUp = function (formData) {
 
 const onSignIn = function (formData) {
   return $.ajax({
-    url: config.apiUrl + '/sign-in/',
+    url: config.apiUrl + '/sign-in',
     method: 'POST',
     data: formData
   })
@@ -24,17 +24,17 @@ const onChangePassword = function (formData) {
     method: 'PATCH',
     data: formData,
     headers: {
-      Authorization: 'Bearer ' + store.user.token
+      Authorization: 'Bearer' + store.user.token
     }
   })
 }
 
 const onSignOut = function () {
   return $.ajax({
-    url: config.apiUrl + '/sign-out/',
+    url: config.apiUrl + '/sign-out',
     method: 'DELETE',
     headers: {
-      Authorization: 'Bearer ' + store.user.token
+      Authorization: 'Bearer' + store.user.token
     }
   })
 }
